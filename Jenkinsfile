@@ -24,7 +24,7 @@ pipeline
         bat "ipconfig /flushdns"
       }
     }
-    stage("Comando BAT")
+    stage("Informar usuario")
     {
       steps{
         echo 'El usuario es ${env.username}'
