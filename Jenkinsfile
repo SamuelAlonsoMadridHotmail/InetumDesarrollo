@@ -21,7 +21,7 @@ pipeline
     stage("Comando BAT")
     {
       steps{
-        bat "ipconfig /flushdns"
+        bat 'ipconfig /flushdns'
       }
     }
     stage("Informar usuario")
