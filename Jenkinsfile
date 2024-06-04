@@ -1,12 +1,33 @@
 pipeline
 {
   agent any
+  environment
+    {
+        CIUDAD = "Cieza"
+        HABITANTES = 35000
+        CLIMA = "Soleado"
+    }
   stages
   {
-    stage("Hola Mundo")
+    stage("Información ciudad")
     {
       steps{
-        echo 'Hola Mundo'
+        script
+        {
+          println "Ciudad: ${env.CIUDAD}, Habitantes: ${env.HABITANTES}, Clima: ${env.CLIMA}"
+        }
+      }
+    }
+    stage("Comando BAT")
+    {
+      steps{
+        bat "ipconfig /flushdns"
+      }
+    }
+    stage("Comando BAT")
+    {
+      steps{
+        echo 'El usuario es ${env.username}'
       }
     }
   }
